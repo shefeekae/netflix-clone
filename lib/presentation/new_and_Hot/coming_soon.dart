@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
@@ -49,16 +51,18 @@ class ComingSoonNewAndHot extends StatelessWidget {
                 comingSoon: newAndHot,
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Flexible(
                     child: Text(
-                      newAndHot[index].originalTitle!,
+                      newAndHot[index].originalTitle ?? 'Loading...',
                       style:
-                          GoogleFonts.aBeeZee(fontSize: 35, letterSpacing: -4),
-                      maxLines: 1,
+                          GoogleFonts.aBeeZee(fontSize: 30, letterSpacing: 0),
                     ),
                   ),
-                  const Spacer(),
+                  const SizedBox(
+                    width: 5,
+                  ),
                   Row(
                     children: const [
                       VideoActions(
@@ -83,15 +87,17 @@ class ComingSoonNewAndHot extends StatelessWidget {
                 style: TextStyle(fontSize: 14),
               ),
               Text(
-                newAndHot[index].originalTitle!,
+                newAndHot[index].originalTitle ?? "Loading...",
                 style: const TextStyle(fontSize: 18),
               ),
               const SizedBox(
                 height: 5,
               ),
-              Text(
-                newAndHot[index].overview!,
-                style: const TextStyle(fontSize: 14, color: Colors.grey),
+              Flexible(
+                child: Text(
+                  newAndHot[index].overview ?? "Loading...",
+                  style: const TextStyle(fontSize: 14, color: Colors.grey),
+                ),
               )
             ],
           ),

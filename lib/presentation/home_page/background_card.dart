@@ -37,10 +37,11 @@ class _BackgroundCardState extends State<BackgroundCard> {
         Container(
           width: double.infinity,
           height: 500,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             image: DecorationImage(
               fit: BoxFit.cover,
-              image: NetworkImage(imageBaseUrl + homeList[9].posterPath!),
+              image: NetworkImage(
+                  "https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg"),
             ),
           ),
         ),

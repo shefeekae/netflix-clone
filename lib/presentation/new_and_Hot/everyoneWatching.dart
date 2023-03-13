@@ -24,7 +24,7 @@ class EveryoneWatching extends StatelessWidget {
           height: 5,
         ),
         Text(
-          everyOne[index].originalTitle!,
+          everyOne[index].originalTitle ?? "Loading...",
           style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 23),
         ),
         const SizedBox(
