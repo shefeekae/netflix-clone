@@ -24,6 +24,7 @@ class Mainpage extends StatelessWidget {
       body: ValueListenableBuilder(
         valueListenable: changeIndexNotifier,
         builder: (context, value, child) {
+          print(pages);
           return pages[value];
         },
       ),
